@@ -19,26 +19,24 @@ import { mapGetters } from "vuex";
 export default {
   name: "carousel",
   mounted: function() {
-    this.slide = 0;
-    this.$store.commit("updateSlide", this.$children[this.slide]._uid);
+    this.$store.commit("updateSlide", this.$children[0]._uid);
   },
   computed: {
     ...mapGetters([`slideShown`])
   },
   methods: {
     left: function() {
-      if (this.slide === 0) {
-        this.slide = this.$children.length;
-      }
-      --this.slide;
-      this.slide %= this.$children.length;
-      this.$store.commit("updateSlide", this.$children[this.slide]._uid);
+      let slide = this.$children.findIndex(child => this.slideShown === child._uid);
+      slide =
+        slide > 0
+          ? (slide - 1) % this.$children.length
+          : this.$children.length - 1;
+      this.$store.commit("updateSlide", this.$children[slide]._uid);
     },
     right: function() {
-      ++this.slide;
-      this.slide %= this.$children.length;
-
-      this.$store.commit("updateSlide", this.$children[this.slide]._uid);
+      let slide = this.$children.findIndex(child => this.slideShown === child._uid);
+      slide = (slide + 1) % this.$children.length;
+      this.$store.commit("updateSlide", this.$children[slide]._uid);
     },
     showSlide: function(_uid) {
       this.$store.commit("updateSlide", _uid);
