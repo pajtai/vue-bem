@@ -1,23 +1,13 @@
 <template>
-  <div class="page home">
+  <div class="page gallery">
 
-      <section class="header">
-        <h1 class="title">Gallery</h1>
-        <button class="cta header__cta">Subscribe</button>
-      </section>
+      <Header title="Gallery" cta="Subscribe"/>
 
-      <section class="carousel">
-        <img class="carousel__image" src=""/>
-        <img class="carousel__image" src=""/>
-        <img class="carousel__image" src=""/>
-        <div class="carousel__arrow-left"></div>
-        <div class="carousel__arrow-righ"></div>
-        <div class="carousel__dots">
-          <div class="carousel__dot"></div>
-          <div class="carousel__dot"></div>
-          <div class="carousel__dot"></div>
-        </div>  
-      </section>
+      <Carousel class="gallery__carousel">
+        <Carousel-Slide src="https://via.placeholder.com/300x200?text=Slide+One"/>
+        <Carousel-Slide src="https://via.placeholder.com/300x200?text=Slide+Two"/>
+        <Carousel-Slide src="https://via.placeholder.com/300x200?text=Slide+Three"/>
+      </Carousel>
 
       <section class="comments">
         <div class="comment">
@@ -40,12 +30,16 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import Carousel from "../components/Carousel.vue";
+import CarouselSlide from "../components/Carousel-Slide.vue";
+import Header from "../components/Header.vue";
 
 export default {
-  name: "home",
+  name: "gallery",
   components: {
-    HelloWorld
+    Carousel,
+    'Carousel-Slide': CarouselSlide,
+    Header
   }
 };
 </script>
