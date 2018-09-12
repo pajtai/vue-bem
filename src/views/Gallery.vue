@@ -45,7 +45,7 @@ export default {
 .gallery__header {
   // layout we have no control over, so we cannot add a .gall
   .header__subtitle {
-    margin-left: 24px;
+    margin-left: 0;
 
     font-size: 16px;
     line-height: 24px;
@@ -70,9 +70,6 @@ export default {
     &__subtitle {
       width: 33%;
       display: inline-block;
-    }
-    &__subtitle {
-      margin-left: 0;
     }
     &__cta {
       display: inline-block;
