@@ -1,7 +1,7 @@
 <template>
   <div class="page archive">
 
-      <Header class="archive__header" title="Archive" cta="Subscribe"/>
+      <Header class="archive__header header--archive-cta" title="Archive" cta="Subscribe"/>
 
       <p class="content archive__content">
         <Carousel class="content__aside">
@@ -58,6 +58,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus risus mi, pla
 }
 
 @media screen and (min-width: $mobile + 1) {
+  .header--archive-cta {
+    .header__cta {
+      width: 302px;
+    }
+  }
+
   .content {
     &__aside {
       display: initial;

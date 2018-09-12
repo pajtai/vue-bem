@@ -19,6 +19,9 @@ export default {
   &__title {
     color: $title;
   }
+  &__cta {
+    padding: 0 8px;
+  }
   &__title,
   &__cta {
     display: inline-block;

@@ -39,7 +39,6 @@ $mobile: 568px;
   }
   .carousel--full-width {
     width: 100%;
-    display: block;
     .carousel__slide {
       width: 100%;
       display: none;
