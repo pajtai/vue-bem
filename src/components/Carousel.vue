@@ -45,69 +45,65 @@ export default {
 };
 </script>
 <style lang="scss">
-// Palette
-$_casal: #26696c;
-$_cornflowerBlue: #9ab5b7;
+@import "../styles/colors";
+@import "../styles/vars";
 
-// Usage
-$carousel-action: $_casal;
-$carousel-inactive: $_cornflowerBlue;
+$slide-width: 400px;
+$dot-width: 8px;
+$dot-gap: 4px;
 
-.carousel {
-  $slide-width: 400px;
-  $dot-width: 8px;
-  $dot-gap: 4px;
-
-  overflow-x: hidden;
-
-  position: relative;
-  display: inline-block;
-
-  &__dots {
-    position: absolute;
-    bottom: 0;
-    width: $dot-width * 3 + 2 * $dot-gap;
-    margin-left: -($dot-width * 3 + 2 * $dot-gap);
-    left: 50%;
-    margin-bottom: $dot-gap;
-  }
-
-  &__dot + &__dot {
-    margin-left: $dot-gap;
-  }
-
-  &__dot {
-    cursor: pointer;
-    height: $dot-width;
-    width: $dot-width;
-    background-color: $carousel-inactive;
-    border-radius: 50%;
+// Rededefinition level for desktop
+@media screen and (min-width: $mobile + 1) {
+  .carousel {
+    position: relative;
     display: inline-block;
-    &--active {
-      background-color: $carousel-action;
+    overflow-x: hidden;
+    &__dots {
+      position: absolute;
+      bottom: 0;
+      width: $dot-width * 3 + 2 * $dot-gap;
+      margin-left: -($dot-width * 3 + 2 * $dot-gap);
+      left: 50%;
+      margin-bottom: $dot-gap;
     }
-  }
 
-  &__arrow-right,
-  &__arrow-left {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    margin-top: -$dot-width;
-    width: 0;
-    height: 0;
-    border-top: 4 * $dot-gap solid transparent;
-    border-bottom: 4 * $dot-gap solid transparent;
-  }
-  &__arrow-right {
-    right: 0;
-    border-left: 3 * $dot-gap solid $carousel-action;
-    margin-right: 3 * $dot-gap;
-  }
-  &__arrow-left {
-    left: 0;
-    border-right: 3 * $dot-gap solid $carousel-action;
-    margin-left: 3 * $dot-gap;
+    &__dot + &__dot {
+      margin-left: $dot-gap;
+    }
+
+    &__dot {
+      cursor: pointer;
+      height: $dot-width;
+      width: $dot-width;
+      background-color: $carousel-inactive;
+      border-radius: 50%;
+      display: inline-block;
+      &--active {
+        background-color: $carousel-action;
+      }
+    }
+
+    &__arrow-right,
+    &__arrow-left {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      margin-top: -$dot-width;
+      width: 0;
+      height: 0;
+      border-top: 4 * $dot-gap solid transparent;
+      border-bottom: 4 * $dot-gap solid transparent;
+    }
+    &__arrow-right {
+      right: 0;
+      border-left: 3 * $dot-gap solid $carousel-action;
+      margin-right: 3 * $dot-gap;
+    }
+    &__arrow-left {
+      left: 0;
+      border-right: 3 * $dot-gap solid $carousel-action;
+      margin-left: 3 * $dot-gap;
+    }
   }
 }
 </style>

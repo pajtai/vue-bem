@@ -1,0 +1,26 @@
+@import "colors";
+
+
+h1, h2, h3 h4, h5, h6, div, p, section, button {
+  font-family: "Roboto", "sans-serif";
+  line-height: 24px;
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.cta {
+  background-color: $nav-color;
+  border-radius: 2px;
+  color: $subtitle;
+  border: 1px solid $button;
+  cursor: pointer;
+  padding: 0;
+}
+.title {
+  font-size: 24px;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+.page {
+  margin: 0 24px;
+}
