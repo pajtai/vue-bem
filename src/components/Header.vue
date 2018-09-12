@@ -19,7 +19,8 @@ export default {
   &__title {
     color: $title;
   }
-  &__title, &__cta {
+  &__title,
+  &__cta {
     display: inline-block;
     width: 50%;
   }

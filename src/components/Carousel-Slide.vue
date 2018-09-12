@@ -7,9 +7,7 @@ export default {
   name: "carousel-slide",
   props: ["src", "alt"],
   computed: {
-    ...mapGetters([
-      'slideShown'
-    ]),
+    ...mapGetters(["slideShown"]),
     display() {
       return this.slideShown === this._uid ? "carousel__slide--active" : "";
     }

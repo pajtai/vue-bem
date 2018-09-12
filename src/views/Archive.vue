@@ -57,7 +57,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus risus mi, pla
   }
 }
 
-@media screen and (min-width: $mobile + 1){
+@media screen and (min-width: $mobile + 1) {
   .content {
     &__aside {
       display: initial;

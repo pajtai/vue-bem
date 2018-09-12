@@ -9,7 +9,7 @@
         @click="showSlide(child._uid)"
         :class="{ carousel__dot: true, 'carousel__dot--active': child._uid === slideShown }"
         v-bind:key="child._uid"
-        v-for="child in $children">&nbsp;
+        v-for="child in slides">&nbsp;
       </div>
     </div>
   </section>
@@ -20,13 +20,21 @@ export default {
   name: "carousel",
   mounted: function() {
     this.$store.commit("updateSlide", this.$children[0]._uid);
+    this.slides = this.$children;
+  },
+  data: () => {
+    return {
+      slides: []
+    };
   },
   computed: {
     ...mapGetters([`slideShown`])
   },
   methods: {
     left: function() {
-      let slide = this.$children.findIndex(child => this.slideShown === child._uid);
+      let slide = this.$children.findIndex(
+        child => this.slideShown === child._uid
+      );
       slide =
         slide > 0
           ? (slide - 1) % this.$children.length
@@ -34,7 +42,9 @@ export default {
       this.$store.commit("updateSlide", this.$children[slide]._uid);
     },
     right: function() {
-      let slide = this.$children.findIndex(child => this.slideShown === child._uid);
+      let slide = this.$children.findIndex(
+        child => this.slideShown === child._uid
+      );
       slide = (slide + 1) % this.$children.length;
       this.$store.commit("updateSlide", this.$children[slide]._uid);
     },

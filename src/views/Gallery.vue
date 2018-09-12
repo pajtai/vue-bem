@@ -51,7 +51,8 @@ export default {
     text-transform: uppercase;
     color: $subtitle;
   }
-  &__title, &__subtitle {
+  &__title,
+  &__subtitle {
     width: initial;
   }
   &__cta {
@@ -64,7 +65,9 @@ export default {
 
 @media screen and (min-width: $mobile + 1) {
   .header {
-    &__title, &__cta, &__subtitle {
+    &__title,
+    &__cta,
+    &__subtitle {
       width: 33%;
     }
     &__subtitle {
