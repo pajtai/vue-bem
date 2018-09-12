@@ -41,9 +41,10 @@ export default {
     margin-top: 16px;
   }
 }
-.header {
-  &__subtitle {
-    display: inline-block;
+
+.gallery__header {
+  // layout we have no control over, so we cannot add a .gall
+  .header__subtitle {
     margin-left: 24px;
 
     font-size: 16px;
@@ -51,24 +52,24 @@ export default {
     text-transform: uppercase;
     color: $subtitle;
   }
-  &__title,
-  &__subtitle {
+  .header__title,
+  .header__subtitle,
+  .header__cta {
     width: initial;
-  }
-  &__cta {
     display: block;
-    width: initial;
-
+  }
+  .header__cta {
     margin-top: 8px;
   }
 }
 
 @media screen and (min-width: $mobile + 1) {
-  .header {
+  .gallery__header .header {
     &__title,
     &__cta,
     &__subtitle {
       width: 33%;
+      display: inline-block;
     }
     &__subtitle {
       margin-left: 0;

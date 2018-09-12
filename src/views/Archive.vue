@@ -1,7 +1,7 @@
 <template>
   <div class="page archive">
 
-      <Header class="archive__header header--archive-cta" title="Archive" cta="Subscribe"/>
+      <Header class="archive__header archive__header--wide-cta" title="Archive" cta="Subscribe"/>
 
       <p class="content archive__content">
         <Carousel class="content__aside">
@@ -58,7 +58,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus risus mi, pla
 }
 
 @media screen and (min-width: $mobile + 1) {
-  .header--archive-cta {
+  .archive__header--wide-cta {
+    // we can't add another class to this element, since it's in a child component
     .header__cta {
       width: 302px;
     }
@@ -71,9 +72,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus risus mi, pla
       margin-left: 8px;
     }
   }
-  .header {
+  .archive__header {
     position: relative;
-    &__cta {
+    .header__cta {
       right: 0;
       position: absolute;
     }
